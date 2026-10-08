@@ -1,0 +1,13 @@
+{
+  "class": "FeaturedBannersView",
+  "itemSize": "{263, 148}",
+  "itemCornerRadius": 10,
+  "banners": [
+    {
+      "url": "https://your-username.github.io/your-repo/assets/banner.png",
+      "title": "MyTweak",
+      "package": "com.example.mytweak",
+      "hideShadow": false
+    }
+  ]
+}

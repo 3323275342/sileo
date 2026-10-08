@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyRepo · Sileo 源</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+    background: radial-gradient(1200px 800px at 20% 0%, #2a2350 0%, #14141f 55%, #0d0d14 100%);
+    color: #f2f2f7; padding: 24px;
+  }
+  .card {
+    width: 100%; max-width: 460px; text-align: center;
+    background: rgba(28, 28, 38, 0.72);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px; padding: 40px 32px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+  }
+  img.icon {
+    width: 96px; height: 96px; border-radius: 22px;
+    box-shadow: 0 12px 32px rgba(91,108,255,0.45);
+  }
+  h1 { font-size: 26px; margin: 20px 0 8px; }
+  p.desc { color: #a0a0b0; font-size: 15px; line-height: 1.6; margin-bottom: 28px; }
+  a.btn {
+    display: block; width: 100%; padding: 16px;
+    background: linear-gradient(135deg, #5b6cff, #7c4dff);
+    color: #fff; text-decoration: none; font-size: 17px; font-weight: 600;
+    border-radius: 16px; transition: transform .15s, box-shadow .15s;
+    box-shadow: 0 10px 28px rgba(91,108,255,0.4);
+  }
+  a.btn:active { transform: scale(0.97); }
+  .url-box {
+    display: flex; align-items: center; gap: 8px; margin-top: 16px;
+    background: rgba(255,255,255,0.06); border-radius: 12px; padding: 10px 12px;
+  }
+  .url-box input {
+    flex: 1; background: transparent; border: none; outline: none;
+    color: #c8c8d4; font-size: 13px; font-family: ui-monospace, monospace;
+  }
+  .url-box button {
+    background: rgba(255,255,255,0.1); border: none; color: #eee;
+    padding: 6px 12px; border-radius: 8px; font-size: 13px; cursor: pointer;
+  }
+  .url-box button:active { background: rgba(255,255,255,0.2); }
+  .hint { margin-top: 18px; font-size: 12px; color: #7a7a88; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <img class="icon" src="CydiaIcon.png" alt="Repo Icon">
+    <h1>MyRepo</h1>
+    <p class="desc">我的个人 Sileo 越狱源<br>收录 Tweaks、主题与实用工具</p>
+    <a class="btn" id="addBtn" href="#">添加到 Sileo</a>
+    <div class="url-box">
+      <input id="urlInput" readonly>
+      <button id="copyBtn">复制</button>
+    </div>
+    <div class="hint">需在越狱设备的 Sileo 中打开；源必须通过 HTTPS 访问</div>
+  </div>
+
+<script>
+  // 自动以当前页面地址作为源地址（取目录部分）
+  const href = location.href;
+  const base = href.substring(0, href.lastIndexOf("/") + 1);
+  const addLink = "sileo://source/" + base;
+  document.getElementById("addBtn").href = addLink;
+  document.getElementById("urlInput").value = base;
+
+  document.getElementById("copyBtn").addEventListener("click", async () => {
+    const input = document.getElementById("urlInput");
+    try {
+      await navigator.clipboard.writeText(base);
+    } catch (e) {
+      input.select();
+      document.execCommand("copy");
+    }
+    const btn = document.getElementById("copyBtn");
+    btn.textContent = "已复制";
+    setTimeout(() => btn.textContent = "复制", 1500);
+  });
+</script>
+</body>
+</html>

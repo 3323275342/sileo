@@ -1,0 +1,24 @@
+Origin: 自用备份越狱源
+Label: 自用备份越狱源
+Suite: stable
+Version: 1.0
+Codename: ios
+Architectures: iphoneos-arm64 iphoneos-arm64
+Components: main
+Description: 自己使用备份的越狱源
+Date: Thu, 08 Oct 2026 06:56:11 GMT
+MD5Sum:
+ 2b9438a648cc6cc034474a281d84e00b       1009 Packages
+ a7f85502df7802831fd90744f5e9152e        695 Packages.gz
+ b093ed44b0159c5013ca0c7a28aa538b        766 Packages.bz2
+ f5c2d7af6aee7852a3d6a1a21dc472c2        716 Packages.xz
+SHA1:
+ 91692e9c45d4e5ca93b99586c5cf2b55457d0707       1009 Packages
+ 5d7e88e3b203884bb5fad20c3d59999712bd0c28        695 Packages.gz
+ 9d48e38933f976904221145b9ed89016397238cb        766 Packages.bz2
+ 739e1932b36e8033e40d80341e89b523f8b5bc3d        716 Packages.xz
+SHA256:
+ 91fd9cc245659ee29594358122d7fc43efe62eb37c5bccb1069ad47ae1dad07e       1009 Packages
+ d2ea1760f881230319fa7aa804239f74fe9248542660a0b44802bf127e6f6eb1        695 Packages.gz
+ 1f917a2bcd4271e300ae8ec6267fb888f14d6463dbb18ad19589b8c94fbde5df        766 Packages.bz2
+ a11ef1d25c06355a5873722a5d0f2a63f2ff8b14380a76ac16d6f079de26a4ce        716 Packages.xz
