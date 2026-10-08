@@ -1,6 +1,24 @@
+Package: com.afn
+Name: AFN(微信插件)-Roothide
+Filename: debs/AFN-Roothide-3.6.0-8-iphoneos-arm64e.deb
+Size: 2704356
+MD5sum: 8f5cec8db7c8304e1dbe3b97b6f7e0c2
+SHA1: 2dc3c885a7b6faa30c9e143877c9978f8f93b76e
+SHA256: 4307b849587c728407cd138fc1c662c72584e9f9ee5f3c1ed6094e0274453fad
+Description: 微信插件集合体。
+Maintainer: AFN Team
+Author: AFN Team
+Section: 微信插件
+Depends: mobilesubstrate, firmware (>= 15.0)
+Conflicts: com.tencent.xin.dkhelper, com.dkjone.dkhelper, com.afn.helper, com.xiaoxin.helper
+Architecture: iphoneos-arm64e
+Version: 3.6.0-8
+Installed-Size: 7936
+Pre-Depends: rootless-compat(>= 0.9)
+
 Package: com.qq391160.cpucore
 Name: CPU智能温控(iOS16/17)
-Filename: debs/com.qq2664181893.cpucore_2.0.37_iphoneos-arm64e(1).deb
+Filename: debs/com.qq2664181893.cpucore_2.0.37_iphoneos-arm64e.deb
 Size: 503786
 MD5sum: 13fdd38998c2bfa7655eccafa10f2f97
 SHA1: a6ae9332c5b4a4fdb7052067878af823b479fac7

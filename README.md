@@ -21,6 +21,8 @@ sileo-repo/
 
 ├── index.html               # 源落地页（自动识别地址，含"添加到 Sileo"按钮）
 
+├── 首次发布.bat             # Windows 首次部署向导（双击运行）
+├── 一键上传deb.bat          # Windows 日常更新（把 deb 拖到图标上）
 ├── .nojekyll                # GitHub Pages 必需（跳过 Jekyll 处理）
 
 ├── debs/                    # ★ 把你的 .deb 全部放到这里（可建子目录）
@@ -38,7 +40,8 @@ sileo-repo/
 ├── scripts/
 
 │   ├── update-repo.py       # ★ 核心：扫描 debs/ 生成索引、更新 Release
-
+│   ├── upload-deb.ps1       # 一键上传脚本的 PowerShell 主逻辑
+│   ├── init-publish.ps1     # 首次发布向导的 PowerShell 主逻辑
 │   └── make\_assets.py       # 占位素材生成器（仅需运行一次）
 
 └── .github/workflows/
@@ -46,7 +49,20 @@ sileo-repo/
 &#x20;   └── update.yml           # GitHub Actions：push deb 后自动重建索引
 ```
 
-## 快速开始（3 步）
+## 懒人方式（Windows，推荐新手）
+
+模板根目录提供两个双击即用的脚本，全程不用敲命令：
+
+| 脚本 | 什么时候用 | 做什么 |
+|---|---|---|
+| **`首次发布.bat`** | 仅第一次，部署源到 GitHub | 按提示粘贴你在 github.com/new 新建的仓库地址，自动提交并首次上传 |
+| **`一键上传deb.bat`** | 以后每次加新插件 | **把 .deb 文件直接拖到这个 bat 图标上**（可一次拖多个），自动复制到 debs、提交、上传 |
+
+上传后 GitHub Actions 自动重建索引，等 1～2 分钟在 Sileo 下拉刷新即可。首次发布完成后，记得按脚本提示到仓库 **Settings → Pages** 开启 Pages（选 main / root）。
+
+> 双击 bat 若闪退或提示找不到 PowerShell，可右键"使用 PowerShell 运行"；首次上传会弹出 GitHub 登录窗口，授权一次后以后免登录。
+
+## 快速开始（命令行方式，3 步）
 
 ### 1. 修改源信息
 
